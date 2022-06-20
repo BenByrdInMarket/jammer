@@ -110,16 +110,18 @@ const TrackCard = (props: TrackCardProps) => {
         </Box>
       </Box>
       <Box sx={{ width: '60%', }}>
-        <CardMedia
-          component='img'
-          sx={{
-            height: '200px',
-            width: 'auto',
-            objectFit: 'contain',
-          }}
-          image={!detailsHidden ? trackProps.trackArtwork : HiddenTrackImage}
-          alt='Track artwork'
-        />
+        <Box sx={{ background: '#D7D7D7' }}>
+          <CardMedia
+            component='img'
+            sx={{
+              height: '200px',
+              width: 'auto',
+              objectFit: 'contain',
+            }}
+            image={!detailsHidden ? trackProps.trackArtwork : HiddenTrackImage}
+            alt='Track artwork'
+          />
+        </Box>
         <Typography >
           Key: <b>{!detailsHidden ? trackProps.key : <i>Details Hidden</i>}</b>
         </Typography>
