@@ -1,17 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import TrackCard from './components/TrackCard';
-import TrackAudio from './tracks/Smooth_Jazz_Funk_Jam_Track_in_A_min.mp3';
-import TrackArtwork from './tracks/Smooth_Jazz_Funk_Jam_Track_in_A_min.png';
+import mockData from './mockData/mockData';
+
+export type TrackType = {
+  trackId: number,
+  trackAudio: string,
+  trackTitle: string,
+  trackArtist: string,
+  trackArtwork: string,
+}
 
 const App = () => {
+  const [trackData, setTrackData] = useState<TrackType>();
+
+  const getRandomTrack = () => {
+    console.log(mockData);
+    const randomTrack = mockData.filter(track => track.trackId === 0);
+    setTrackData(randomTrack[0]);
+  }
+
+  useEffect(() => {
+    getRandomTrack()
+  }, [])
+
   return (
     <div>
-      <TrackCard
-        trackAudio={TrackAudio}
-        trackArtist='Benjamin Harrison'
-        trackTitle='Smooth Jazz Funk Jam in A minor'
-        trackArtwork={TrackArtwork}
-      />
+      {trackData && (
+        <TrackCard
+          trackAudio={trackData.trackAudio}
+          trackArtist='Benjamin Harrison'
+          trackTitle='Smooth Jazz Funk Jam in A minor'
+          trackArtwork={trackData.trackArtwork}
+        />
+      )}
     </div>
   );
 }

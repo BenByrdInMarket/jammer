@@ -15,9 +15,9 @@ import StopIcon from '@mui/icons-material/Stop';
 
 export type TrackCardProps = {
   trackAudio: string,
-  trackTitle?: string,
-  trackArtist?: string,
-  trackArtwork?: string,
+  trackTitle: string,
+  trackArtist: string,
+  trackArtwork: string,
 }
 
 const TrackCard = (props: TrackCardProps) => {
