@@ -4,6 +4,7 @@ import mockData from './mockData/mockData';
 
 const App = () => {
   const [trackData, setTrackData] = useState<TrackType>();
+  const [detailsHidden, setDetailsHidden] = useState(false);
 
   const getRandomTrack = () => {
     const id = getRandomArbitrary(mockData.length);
@@ -42,6 +43,8 @@ const App = () => {
             key: trackData.key,
           }}
           nextFunction={getRandomTrack}
+          detailsHidden={detailsHidden}
+          setDetailsHidden={setDetailsHidden}
         />
       )}
     </div>

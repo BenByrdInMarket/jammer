@@ -6,7 +6,7 @@ const mockData = [
     trackAudio: 'https://jammer-tracks.s3.us-west-2.amazonaws.com/track-audio/Smooth_Jazz_Funk_Jam_Track_in_A_min.mp3',
     trackTitle: 'Smooth Jazz Funk Jam Track',
     style: ['Jazz', 'Funk'],
-    key: 'Am'
+    key: 'A minor'
   },
   {
     trackId: 1,
@@ -15,7 +15,7 @@ const mockData = [
     trackAudio: 'https://jammer-tracks.s3.us-west-2.amazonaws.com/track-audio/Funky_Blues_Guitar_Backing_Track_in_Cmin.mp3',
     trackTitle: 'Funky Blues Guitar Backing Track',
     style: ['Funk', 'Blues'],
-    key: 'Cm',
+    key: 'C minor',
   },
   {
     trackId: 2,
@@ -24,7 +24,7 @@ const mockData = [
     trackAudio: 'https://jammer-tracks.s3.us-west-2.amazonaws.com/track-audio/Soulful_Mellow_Groove_Guitar_Backin.mp3',
     trackTitle: 'Soulful Mellow Groove Guitar Backing Track',
     style: ['Soul', 'Groove'],
-    key: 'E',
+    key: 'E minor',
   },
   {
     trackId: 3,
@@ -33,7 +33,7 @@ const mockData = [
     trackAudio: 'https://jammer-tracks.s3.us-west-2.amazonaws.com/track-audio/Wistful_Hard_Rock_Ballad_Am.mp3',
     trackTitle: 'Wistful Hard Rock Ballad Backing Track',
     style: ['Hard Rock', 'Ballad'],
-    key: 'Am',
+    key: 'A minor',
   },
 ];
 

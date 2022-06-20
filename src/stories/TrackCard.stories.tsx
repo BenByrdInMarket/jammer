@@ -1,14 +1,23 @@
 import TrackCard, { TrackCardProps } from '../components/TrackCard';
 import { Story } from '@storybook/react';
+import { useState } from 'react';
 
 export default {
   title: 'Tracks / Track Card',
   component: TrackCard,
 }
 
-const Template:Story<TrackCardProps> = (props) => <TrackCard {...props} />
+const Template:Story<TrackCardProps> = (props) => {
+  const [detailsHidden, setDetailsHidden] = useState(false);
 
-
+  return (
+    <TrackCard
+      {...props}
+      detailsHidden={detailsHidden}
+      setDetailsHidden={setDetailsHidden}
+    />
+  );
+};
 
 export const trackCard = Template.bind({});
 trackCard.args = {
