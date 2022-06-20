@@ -6,7 +6,7 @@ const App = () => {
   const [trackData, setTrackData] = useState<TrackType>();
 
   const getRandomTrack = () => {
-    const id = getRandomArbitrary(3);
+    const id = getRandomArbitrary(mockData.length);
     const data = mockData.filter(track => track.trackId === id)[0];
     setTrackData(data);
   }
