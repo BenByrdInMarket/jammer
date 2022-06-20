@@ -25,20 +25,26 @@ const TrackCard = (props: TrackCardProps) => {
   const theme = useTheme();
   const [audioFile, setAudioFile] = useState(new Audio());
   const [isPlaying, setIsPlaying] = useState(false);
+  const [trackStatus, setTrackStatus] = useState('')
 
   const handlePlay = () => {
     audioFile.play().then(() => setIsPlaying(true));
+    setTrackStatus('Playing')
   }
 
   const handlePause = () => {
     audioFile.pause();
     setIsPlaying(false);
+    setTrackStatus(`Paused at ${parseFloat(audioFile.currentTime.toString()).toFixed(2)}s`)
   }
 
   const handleStop = () => {
-    audioFile.pause()
-    audioFile.currentTime = 0;
-    setIsPlaying(false);
+    if (isPlaying || trackStatus.split(' ').includes('Paused')) {
+      audioFile.pause()
+      audioFile.currentTime = 0;
+      setIsPlaying(false);
+      setTrackStatus('')
+    }
   }
 
   useEffect(() => {
@@ -60,6 +66,11 @@ const TrackCard = (props: TrackCardProps) => {
             {trackArtist}
           </Typography>
         </CardContent>
+        <Box sx={{ textAlign: 'center' }}>
+          <Typography variant='subtitle2' fontSize='12px' color='text.secondary' component='div'>
+            {trackStatus}
+          </Typography>
+        </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
           <IconButton aria-label='previous'>
             {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
@@ -85,7 +96,7 @@ const TrackCard = (props: TrackCardProps) => {
       <Box>
         <CardMedia
           component='img'
-          sx={{ width: 250 }}
+          sx={{ width: '100%', objectFit: 'contain' }}
           image={trackArtwork}
           alt='Track artwork'
         />
