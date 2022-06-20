@@ -79,7 +79,7 @@ const TrackCard = (props: TrackCardProps) => {
   }, [audioFile])
 
   return (
-    <Card sx={{ display: 'flex', width: '600px', height: '350px', margin: '25px' }} elevation={2}>
+    <Card sx={{ display: 'flex', width: '450px', height: '350px', margin: '25px' }} elevation={2}>
       <Box sx={{ display: 'flex', flexDirection: 'column', width: '40%' }}>
         <CardContent sx={{ flex: '1 0 auto' }}>
           <Typography component='div' fontSize='18px'>
@@ -118,7 +118,7 @@ const TrackCard = (props: TrackCardProps) => {
           <CardMedia
             component='img'
             sx={{
-              height: '200px',
+              height: '150px',
               width: 'auto',
               objectFit: 'contain',
             }}
