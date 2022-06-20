@@ -1,16 +1,20 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  CardMedia,
+  Chip,
+  IconButton,
+  Stack,
+  Typography,
+} from '@mui/material';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 import PauseIcon from '@mui/icons-material/Pause';
 import StopIcon from '@mui/icons-material/Stop';
-import { Button, Chip, Stack } from '@mui/material';
 import HiddenTrackImage from '../images/HiddenTrackImage.png';
 
 export type TrackType = {
@@ -76,7 +80,7 @@ const TrackCard = (props: TrackCardProps) => {
 
   return (
     <Card sx={{ display: 'flex', width: '600px', height: '350px', margin: '25px' }} elevation={2}>
-      <Box sx={{ display: 'flex', flexDirection: 'column', width: '40%', }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', width: '40%' }}>
         <CardContent sx={{ flex: '1 0 auto' }}>
           <Typography component='div' fontSize='18px'>
             {!detailsHidden ? trackProps.trackTitle : <i>Details Hidden</i>}
@@ -109,7 +113,7 @@ const TrackCard = (props: TrackCardProps) => {
           </IconButton>
         </Box>
       </Box>
-      <Box sx={{ width: '60%', }}>
+      <Box sx={{ width: '60%' }}>
         <Box sx={{ background: '#D7D7D7' }}>
           <CardMedia
             component='img'
@@ -122,10 +126,10 @@ const TrackCard = (props: TrackCardProps) => {
             alt='Track artwork'
           />
         </Box>
-        <Typography >
+        <Typography>
           Key: <b>{!detailsHidden ? trackProps.key : <i>Details Hidden</i>}</b>
         </Typography>
-        <Stack direction='row' spacing={1} sx={{ marginTop: '5px', }}>
+        <Stack direction='row' spacing={1} sx={{ marginTop: '5px' }}>
           {trackProps.style.map((tag, index) => (
             <Chip
               label={!detailsHidden ? tag : 'Details Hidden'}
