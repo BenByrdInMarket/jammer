@@ -24,7 +24,7 @@ const mockData = [
     trackAudio: 'https://jammer-tracks.s3.us-west-2.amazonaws.com/track-audio/Soulful_Mellow_Groove_Guitar_Backin.mp3',
     trackTitle: 'Soulful Mellow Groove Guitar Backing Track',
     style: ['Soul', 'Groove'],
-    key: 'E minor',
+    key: 'E',
   },
   {
     trackId: 3,
@@ -34,6 +34,15 @@ const mockData = [
     trackTitle: 'Wistful Hard Rock Ballad Backing Track',
     style: ['Hard Rock', 'Ballad'],
     key: 'A minor',
+  },
+  {
+    trackId: 4,
+    trackArtist: 'Andrea Quintarelli',
+    trackArtwork: 'https://jammer-tracks.s3.us-west-2.amazonaws.com/track-artwork/Dancing_on_the_coffee_table.png',
+    trackAudio: 'https://jammer-tracks.s3.us-west-2.amazonaws.com/track-audio/Dancing_on_the_coffee_table.mp3',
+    trackTitle: 'Dancing on the Coffee Table',
+    style: ['Blues', 'Funk'],
+    key: 'C',
   },
 ];
 
