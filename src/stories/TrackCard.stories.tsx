@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 export default {
   title: 'Tracks / Track Card',
-  component: TrackCard,
+  component: TrackCard, // Adding a comment
 }
 
 const Template:Story<TrackCardProps> = (props) => {
